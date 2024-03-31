@@ -1,0 +1,5 @@
+package com.intuit.ordermanagement.service.orderItem;
+
+public interface OrderItemService {
+
+}

@@ -1,0 +1,8 @@
+package com.intuit.ordermanagement.service.order;
+
+import com.intuit.ordermanagement.model.Order;
+
+public interface OrderService {
+	public Order createOrder(Order order);
+	public Order getOrderDetails(Long orderId);
+}

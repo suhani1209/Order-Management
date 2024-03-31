@@ -1,0 +1,30 @@
+package com.intuit.ordermanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.intuit.ordermanagement.dto.OrderPayload;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.service.order.OrderService;
+
+@RestController
+@RequestMapping("/api/orders")
+public class OrderController {
+	
+	@Autowired
+	private OrderService orderService;
+	
+	@PostMapping
+	 public Order placeOrder(@RequestBody OrderPayload payload) {
+        List<Product> products = fetchProducts(payload); // Your logic to fetch products
+        Order order = DtoUtil.createOrderFromPayload(payload, products);
+        return orderService.createOrder(order);
+    }
+
+    private List<Product> fetchProducts(OrderPayload payload) {
+        // Implement fetching of all required Products from the payload using your ProductRepository
+    }
+}

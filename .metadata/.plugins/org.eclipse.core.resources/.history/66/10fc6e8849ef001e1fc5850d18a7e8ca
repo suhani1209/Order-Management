@@ -1,0 +1,31 @@
+package com.intuit.ordermanagement.dto;
+
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import com.intuit.ordermanagement.exception.ProductNotFoundException;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.ProductRepository;
+
+public class DtoUtil {
+	private Order createOrderFromPayload(OrderPayload payload, UUID orderId, Order order,ProductRepository productRepository) {
+	    List<OrderItem> orderItems = payload.getItems().stream()
+	            .map(item -> createOrderItem(item, orderId, productRepository)) 
+	            .collect(Collectors.toList());
+
+	    order.setItems(orderItems);
+	    
+	    return order; 
+    }
+	private OrderItem createOrderItem(ItemQuantityPair item, UUID orderId, ProductRepository productRepository) {
+		Product product = productRepository.findById(item.getProductId()).orElseThrow(()->new ProductNotFoundException(item.getProductId()));
+		
+		OrderItem orderItem = new OrderItem(orderId, item.getProductId(), item.getQuantity(), product.getPrice());
+        orderItemService.createOrderItem(orderItem);
+        
+        return orderItem;
+    }
+}

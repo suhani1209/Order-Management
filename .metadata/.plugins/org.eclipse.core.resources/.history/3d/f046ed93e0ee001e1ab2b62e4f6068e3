@@ -1,0 +1,54 @@
+package com.intuit.ordermanagement.service.order;
+
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.intuit.ordermanagement.exception.OrderNotFoundException;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.repository.OrderRepository;
+import com.intuit.ordermanagement.repository.ProductRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class OrderServiceImpl implements OrderService{
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	@Transactional
+	public Order createOrder(Order order) {
+		BigDecimal totalValue = BigDecimal.ZERO;
+		for(OrderItem item: order.getItems()) {
+			BigDecimal itemPrice = item.getProduct().getPrice();
+			totalValue = totalValue.add(itemPrice.multiply(new BigDecimal(item.getQuantity())));
+		}
+		order.setTotalOrderValue(totalValue);
+		System.out.println("Order to be saved: " + order);
+		Order savedOrder = orderRepository.save(order);  // Save the order
+		Long orderId = savedOrder.getId();
+
+		System.out.println("Saved order: " + savedOrder);
+
+	    // Establish the relationship
+	    for (OrderItem orderItem : savedOrder.getItems()) {
+	        orderItem.setOrder(savedOrder);
+	        orderItem.setId(orderId);
+	    }
+	    System.out.println("hellllooooo");
+
+	    return savedOrder;
+	}
+
+	@Override
+	public Order getOrderDetails(Long orderId) {
+		return orderRepository.findById(orderId).orElseThrow(()-> new OrderNotFoundException(orderId));
+	}
+
+}

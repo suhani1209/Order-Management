@@ -1,0 +1,8 @@
+package com.intuit.ordermanagement.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Order {
+
+}

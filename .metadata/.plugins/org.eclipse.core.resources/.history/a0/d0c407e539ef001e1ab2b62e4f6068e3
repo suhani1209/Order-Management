@@ -1,0 +1,73 @@
+package com.intuit.ordermanagement.controller;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.intuit.ordermanagement.dto.DtoUtil;
+import com.intuit.ordermanagement.dto.ItemQuantityPair;
+import com.intuit.ordermanagement.dto.OrderPayload;
+import com.intuit.ordermanagement.exception.ProductNotFoundException;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.OrderItemRepository;
+import com.intuit.ordermanagement.repository.ProductRepository;
+import com.intuit.ordermanagement.service.order.OrderService;
+
+@RestController
+@RequestMapping("/api/orders")
+public class OrderController {
+	
+	@Autowired
+	private OrderService orderService;
+	@Autowired
+	private ProductRepository productRepository;
+	@Autowired
+	private OrderItemRepository orderItemRepository;
+	
+	@PostMapping
+	 public Order placeOrder(@RequestBody OrderPayload payload) {
+		UUID orderId = UUID.randomUUID();
+		Order order = new Order(orderId);
+		//establish relationship between order item and new order
+	    order = createOrderFromPayload(payload,order);
+
+	    return orderService.createOrder(order);
+    }
+	
+	public Order createOrderFromPayload(OrderPayload payload, Order order) {
+		BigDecimal totalOrderValue = BigDecimal.ZERO;
+	    List<OrderItem> orderItems = payload.getItems().stream()
+	            .map(item -> createOrderItem(item, order, totalOrderValue)) 
+	            .collect(Collectors.toList());
+
+	    order.setItems(orderItems);
+	    order.setTotalOrderValue(totalOrderValue);
+	    
+	    System.out.println("Order with ID %s has the following OrderItem IDs: %s"+order.getId()+orderItems.stream().map(OrderItem::getId).collect(Collectors.toList()));
+	    return order; 
+    }
+	
+	private OrderItem createOrderItem(ItemQuantityPair item, Order order, BigDecimal totalOrderValue) {
+		Product product = productRepository.findById(item.getProductId()).orElseThrow(()->new ProductNotFoundException(item.getProductId()));
+		
+        OrderItem orderItem = new OrderItem(order,product,item.getQuantity());
+        orderItemRepository.save(orderItem);
+        
+        BigDecimal itemPrice = product.getPrice();
+	    BigDecimal itemCost= itemPrice.multiply(new BigDecimal(item.getQuantity()));
+	    totalOrderValue = totalOrderValue.add(itemCost);
+        
+        System.out.println("Created OrderItem with ID: "+orderItem.getId());
+        return orderItem;
+    }
+}

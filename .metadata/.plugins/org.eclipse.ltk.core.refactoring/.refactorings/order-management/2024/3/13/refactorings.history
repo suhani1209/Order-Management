@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;name&apos; in &apos;com.intuit.ordermanagement.model.Product&apos; to &apos;productName&apos;&#x0D;&#x0A;- Original project: &apos;order-management&apos;&#x0D;&#x0A;- Original element: &apos;com.intuit.ordermanagement.model.Product.name&apos;&#x0D;&#x0A;- Renamed element: &apos;com.intuit.ordermanagement.model.Product.productName&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;name&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.intuit.ordermanagement.model{Product.java[Product^name" name="productName" references="true" setter="false" stamp="1711822992426" textual="false" version="1.0"/>
+</session>

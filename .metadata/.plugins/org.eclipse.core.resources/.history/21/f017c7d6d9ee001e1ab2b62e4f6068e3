@@ -1,0 +1,54 @@
+package com.intuit.ordermanagement.controller;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.intuit.ordermanagement.dto.DtoUtil;
+import com.intuit.ordermanagement.dto.ItemQuantityPair;
+import com.intuit.ordermanagement.dto.OrderPayload;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.ProductRepository;
+import com.intuit.ordermanagement.service.order.OrderService;
+
+@RestController
+@RequestMapping("/api/orders")
+public class OrderController {
+	
+	@Autowired
+	private OrderService orderService;
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@PostMapping
+	 public Order placeOrder(@RequestBody OrderPayload payload) {
+		List<Product> products = fetchProducts(payload); 
+	    Order order = DtoUtil.createOrderFromPayload(payload, products);
+
+	    // Establish the Order-OrderItem relationship
+	    for (OrderItem item : order.getItems()) {
+	        item.setOrder(order); 
+	    }
+
+	    return orderService.createOrder(order);
+    }
+
+    private List<Product> fetchProducts(OrderPayload payload) {
+    	Set<Long> productIds = payload.getItems().stream()
+                .map(ItemQuantityPair::getProductId)
+                .collect(Collectors.toSet());
+
+    	return productRepository.findNecessaryDataByIds(productIds).stream()
+    	        .map(attrs -> new Product((Long) attrs[0], (String) attrs[1], (BigDecimal) attrs[2], (String) attrs[3]))  // Access elements of Object[]
+    	        .collect(Collectors.toList()); 
+    }
+}

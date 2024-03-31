@@ -1,0 +1,5 @@
+package com.intuit.ordermanagement.dto;
+
+public class ItemQuantityPair {
+
+}

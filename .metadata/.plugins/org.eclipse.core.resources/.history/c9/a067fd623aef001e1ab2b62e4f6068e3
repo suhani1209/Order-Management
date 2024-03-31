@@ -1,0 +1,18 @@
+package com.intuit.ordermanagement.service.orderItem;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.repository.OrderItemRepository;
+
+public class OrderItemServiceImpl implements OrderItemService{
+	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
+
+	@Override
+	public OrderItem createOrderItem(OrderItem orderItem) {
+		return orderItemRepository.save(orderItem);
+	}
+
+}

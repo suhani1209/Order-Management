@@ -1,0 +1,69 @@
+package com.intuit.ordermanagement.model;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "orders")
+public class Order {
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+	private List<OrderItem> items = new ArrayList<>();
+	
+	private BigDecimal totalOrderValue;
+	private String orderstatus;
+	
+	public Order() {}
+
+	public Order(Long id, List<OrderItem> items, BigDecimal totalOrderValue, String orderstatus) {
+		super();
+		this.id = id;
+		this.items = items;
+		this.totalOrderValue = totalOrderValue;
+		this.orderstatus = orderstatus;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<OrderItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<OrderItem> items) {
+		this.items = items;
+	}
+
+	public BigDecimal getTotalOrderValue() {
+		return totalOrderValue;
+	}
+
+	public void setTotalOrderValue(BigDecimal totalOrderValue) {
+		this.totalOrderValue = totalOrderValue;
+	}
+
+	public String getOrderstatus() {
+		return orderstatus;
+	}
+
+	public void setOrderstatus(String orderstatus) {
+		this.orderstatus = orderstatus;
+	}
+}
