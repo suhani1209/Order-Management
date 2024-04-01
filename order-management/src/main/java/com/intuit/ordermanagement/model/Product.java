@@ -1,7 +1,6 @@
 package com.intuit.ordermanagement.model;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +21,12 @@ public class Product {
 	
 	public Product() {}
 	
+	public Product(String name, BigDecimal price, String description) {
+		super();
+		this.productName = name;
+		this.price = price;
+		this.description = description;
+	}
 	public Product(Long id, String name, BigDecimal price, String description) {
 		super();
 		this.id = id;

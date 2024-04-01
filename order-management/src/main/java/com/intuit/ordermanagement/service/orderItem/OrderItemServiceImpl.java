@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.intuit.ordermanagement.model.OrderItem;
 import com.intuit.ordermanagement.repository.OrderItemRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class OrderItemServiceImpl implements OrderItemService{
 	
@@ -13,6 +15,7 @@ public class OrderItemServiceImpl implements OrderItemService{
 	private OrderItemRepository orderItemRepository;
 
 	@Override
+	@Transactional
 	public OrderItem createOrderItem(OrderItem orderItem) {
 		return orderItemRepository.save(orderItem);
 	}

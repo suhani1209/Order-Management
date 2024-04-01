@@ -1,8 +1,18 @@
 package com.intuit.ordermanagement.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.ErrorResponse;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.intuit.ordermanagement.exception.OrderNotFoundException;
 import com.intuit.ordermanagement.exception.ProductNotFoundException;
@@ -20,9 +30,20 @@ public class ExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 	
+	@org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<String> handleValidationException(MethodArgumentNotValidException ex) {
+		BindingResult result = ex.getBindingResult();
+	    FieldError fieldError = result.getFieldError();
+
+	    // Extract the first error message
+	    String errorMessage = fieldError.getDefaultMessage();
+
+	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+    }
+	
 	@org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
 	public ResponseEntity<String> handleRestAllExceptions(Exception ex) {
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occured : "+ex.getMessage());
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Unexpected error occured : "+ex.getMessage());
 	}
 	
 }

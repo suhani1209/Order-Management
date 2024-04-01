@@ -12,20 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.intuit.ordermanagement.exception.ProductNotFoundException;
 import com.intuit.ordermanagement.model.Product;
 import com.intuit.ordermanagement.repository.ProductRepository;
+import com.intuit.ordermanagement.service.product.ProductService;
 
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
 	@Autowired
-	private ProductRepository productRepository;
+	private ProductService productService;
 	
 	@GetMapping("/{productId}/price")
 	public BigDecimal getProductPrice(@PathVariable Long productId) {
-		return productRepository.findById(productId).map(Product::getPrice).orElseThrow(()-> new ProductNotFoundException(productId));
+		return productService.getProductById(productId).getPrice();
 	}
 	
 	@GetMapping
 	public List<Product> getAllProducts(){
-		return productRepository.findAll();
+		return productService.getAllProducts();
 	}
 }

@@ -7,8 +7,6 @@ import java.util.UUID;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -28,16 +26,18 @@ public class Order {
 	public Order() {}
 
 	public Order(UUID id) {
-		super();
 		this.id = id;
 		this.orderstatus = "CREATED";
 	}
 
 	public Order(UUID id, List<OrderItem> items, BigDecimal totalOrderValue, String orderstatus) {
-		super();
+		this(id, items, orderstatus);
+		this.totalOrderValue = totalOrderValue;
+		
+	}
+	public Order(UUID id, List<OrderItem> items, String orderstatus) {
 		this.id = id;
 		this.items = items;
-		this.totalOrderValue = totalOrderValue;
 		this.orderstatus = orderstatus;
 	}
 

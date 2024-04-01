@@ -1,6 +1,7 @@
 package com.intuit.ordermanagement.service.order;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,13 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public Order getOrderDetails(UUID orderId) {
+	public Order getOrderDetailsByOrderId(UUID orderId) {
 		return orderRepository.findById(orderId).orElseThrow(()-> new OrderNotFoundException(orderId));
+	}
+
+	@Override
+	public List<Order> getAllOrders() {
+		return orderRepository.findAll();
 	}
 
 }
