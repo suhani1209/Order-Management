@@ -6,7 +6,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 
 public class OrderPayload {
-	@NotEmpty(message = "Items list must not be empty")
+	@NotEmpty(message = "Order Items list must not be empty")
     @Valid // Enable validation for elements of the list
 	private List<ItemQuantityPair> items;
 	

@@ -97,4 +97,46 @@ public class OrderControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isNotFound())
                 .andExpect(MockMvcResultMatchers.content().string("Product not found with ID: " + nonExistingProductId));
     }
+    
+    @Test
+    public void testPlaceOrderWithEmptyPayload() throws Exception {
+        OrderPayload payload = new OrderPayload(new ArrayList<>());
+        
+        // Making POST request to /api/order with an empty payload
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/order")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(payload)))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest())
+                .andExpect(MockMvcResultMatchers.content().string("Order Items list must not be empty"));
+    }
+    
+    @Test
+    public void testPlaceOrderWithNegativeQuantity() throws Exception {
+        // Negative quantity
+        long productId = 1L;
+        List<ItemQuantityPair> items = Collections.singletonList(new ItemQuantityPair(productId, -1));
+        OrderPayload payload = new OrderPayload(items);
+        
+        // Making POST request to /api/order with negative quantity
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/order")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(payload)))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest())
+                .andExpect(MockMvcResultMatchers.content().string("Quantity must be positive"));
+    }
+
+    @Test
+    public void testPlaceOrderWithZeroQuantity() throws Exception {
+        // Zero quantity
+        long productId = 1L;
+        List<ItemQuantityPair> items = Collections.singletonList(new ItemQuantityPair(productId, 0));
+        OrderPayload payload = new OrderPayload(items);
+        
+        // Making POST request to /api/order with zero quantity
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/order")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(payload)))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest())
+                .andExpect(MockMvcResultMatchers.content().string("Quantity must be positive"));;
+    }
 }

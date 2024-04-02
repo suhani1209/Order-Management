@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.intuit.ordermanagement.exception.OrderNotFoundException;
-import com.intuit.ordermanagement.exception.ProductNotFoundException;
 import com.intuit.ordermanagement.model.Order;
 import com.intuit.ordermanagement.model.OrderItem;
 import com.intuit.ordermanagement.repository.OrderRepository;
@@ -16,6 +17,7 @@ import com.intuit.ordermanagement.repository.OrderRepository;
 import jakarta.transaction.Transactional;
 
 @Service
+@CacheConfig(cacheNames = "orders")
 public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
@@ -33,6 +35,7 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
+	@Cacheable(key = "#orderId")
 	public Order getOrderDetailsByOrderId(UUID orderId) {
 		return orderRepository.findById(orderId).orElseThrow(()-> new OrderNotFoundException(orderId));
 	}

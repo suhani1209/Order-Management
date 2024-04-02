@@ -4,14 +4,13 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.intuit.ordermanagement.exception.ProductNotFoundException;
 import com.intuit.ordermanagement.model.Product;
-import com.intuit.ordermanagement.repository.ProductRepository;
 import com.intuit.ordermanagement.service.product.ProductService;
 
 @RestController
@@ -21,6 +20,7 @@ public class ProductController {
 	private ProductService productService;
 	
 	@GetMapping("/{productId}/price")
+	@Cacheable(value = "productPrices", key = "#productId")
 	public BigDecimal getProductPrice(@PathVariable Long productId) {
 		return productService.getProductById(productId).getPrice();
 	}

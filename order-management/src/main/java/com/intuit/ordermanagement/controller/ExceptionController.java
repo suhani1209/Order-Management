@@ -34,17 +34,17 @@ public class ExceptionController {
 	@org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleValidationException(MethodArgumentNotValidException ex) {
 		BindingResult result = ex.getBindingResult();
-	    FieldError fieldError = result.getFieldError();
-
-	    // Extract the first error message
-	    String errorMessage = fieldError.getDefaultMessage();
-	    System.out.println("I have come in method arguement exception");
-
-	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+	    if (result.getFieldError("items") != null && result.getFieldError("items").getRejectedValue() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Request body is missing");
+        } else {
+            FieldError fieldError = result.getFieldError();
+            String errorMessage = fieldError.getDefaultMessage();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+        }
     }
 	
 	@org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
-	public ResponseEntity<String> handleRestAllExceptions(Exception ex) {
+	public ResponseEntity<String> handleGenericException(Exception ex) {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Unexpected error occured : "+ex.getMessage());
 	}
 	
