@@ -59,22 +59,4 @@ public class OrderController {
 	    logger.info("Order created successfully: {}", order);
 	    return orderService.createOrder(order);
     }
-	
-	private Order createOrderFromPayload(OrderPayload payload, UUID orderId, Order order) {
-	    List<OrderItem> orderItems = payload.getItems().stream()
-	            .map(item -> createOrderItem(item, orderId)) 
-	            .collect(Collectors.toList());
-
-	    order.setItems(orderItems);
-	    
-	    return order; 
-    }
-	
-	private OrderItem createOrderItem(ItemQuantityPair item, UUID orderId) {
-		Product product = productService.getProductById(item.getProductId());
-		
-		OrderItem orderItem = new OrderItem(orderId, item.getProductId(), item.getQuantity(), product.getPrice());
-        
-        return orderItem;
-    }
 }
