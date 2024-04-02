@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProductControllerTest" project="order-management" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.ordermanagement.controller.ProductControllerTest" time="0.47" displayname="ProductControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.controller.ProductControllerTest]">
+    <testcase name="testGetProductPrice" classname="com.intuit.ordermanagement.controller.ProductControllerTest" time="0.363" displayname="testGetProductPrice()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.controller.ProductControllerTest]/[method:testGetProductPrice()]"/>
+    <testcase name="testGetProductPriceProductNotFound" classname="com.intuit.ordermanagement.controller.ProductControllerTest" time="0.02" displayname="testGetProductPriceProductNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.controller.ProductControllerTest]/[method:testGetProductPriceProductNotFound()]"/>
+    <testcase name="testGetAllProducts" classname="com.intuit.ordermanagement.controller.ProductControllerTest" time="0.084" displayname="testGetAllProducts()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.controller.ProductControllerTest]/[method:testGetAllProducts()]"/>
+  </testsuite>
+</testrun>

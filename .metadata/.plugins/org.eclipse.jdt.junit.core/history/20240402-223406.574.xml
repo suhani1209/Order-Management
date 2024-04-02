@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="OrderServiceIT" project="order-management" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.ordermanagement.service.OrderServiceIT" time="0.779" displayname="OrderServiceIT" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.service.OrderServiceIT]">
+    <testcase name="testCreateOrder" classname="com.intuit.ordermanagement.service.OrderServiceIT" time="0.635" displayname="testCreateOrder()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.service.OrderServiceIT]/[method:testCreateOrder()]"/>
+    <testcase name="testGetAllOrders" classname="com.intuit.ordermanagement.service.OrderServiceIT" time="0.136" displayname="testGetAllOrders()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.service.OrderServiceIT]/[method:testGetAllOrders()]"/>
+    <testcase name="testGetOrderDetailsByOrderIdWhenOrderNotFound" classname="com.intuit.ordermanagement.service.OrderServiceIT" time="0.006" displayname="testGetOrderDetailsByOrderIdWhenOrderNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.ordermanagement.service.OrderServiceIT]/[method:testGetOrderDetailsByOrderIdWhenOrderNotFound()]"/>
+  </testsuite>
+</testrun>

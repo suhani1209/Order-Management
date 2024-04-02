@@ -1,19 +1,11 @@
 package com.intuit.ordermanagement.controller;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.intuit.ordermanagement.exception.OrderNotFoundException;
 import com.intuit.ordermanagement.exception.ProductNotFoundException;
@@ -22,12 +14,12 @@ import com.intuit.ordermanagement.exception.ProductNotFoundException;
 public class ExceptionController {
 	
 	@org.springframework.web.bind.annotation.ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<String> handleProductNotFound(ProductNotFoundException ex) {
+    public ResponseEntity<String> handleProductNotFoundException(ProductNotFoundException ex) {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 	
 	@org.springframework.web.bind.annotation.ExceptionHandler(OrderNotFoundException.class)
-    public ResponseEntity<String> handleOrderNotFound(OrderNotFoundException ex) {
+    public ResponseEntity<String> handleOrderNotFoundException(OrderNotFoundException ex) {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 	

@@ -1,0 +1,292 @@
+2024-04-02T20:18:14.537+05:30  INFO 17172 --- [order-management] [main] c.i.o.OrderManagementApplication         : Starting OrderManagementApplication using Java 17.0.10 with PID 17172 (C:\Users\Dell\Desktop\Order Management\order-management\target\classes started by Dell in C:\Users\Dell\Desktop\Order Management\order-management)
+2024-04-02T20:18:14.539+05:30  INFO 17172 --- [order-management] [main] c.i.o.OrderManagementApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-02T20:18:15.067+05:30  INFO 17172 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-02T20:18:15.132+05:30  INFO 17172 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2024-04-02T20:18:15.547+05:30  INFO 17172 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-02T20:18:15.558+05:30  INFO 17172 --- [order-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-02T20:18:15.558+05:30  INFO 17172 --- [order-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-02T20:18:15.609+05:30  INFO 17172 --- [order-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-02T20:18:15.609+05:30  INFO 17172 --- [order-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1033 ms
+2024-04-02T20:18:15.753+05:30  INFO 17172 --- [order-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-02T20:18:15.836+05:30  INFO 17172 --- [order-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-02T20:18:15.876+05:30  INFO 17172 --- [order-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-02T20:18:16.111+05:30  INFO 17172 --- [order-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-02T20:18:16.139+05:30  INFO 17172 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-02T20:18:16.290+05:30  INFO 17172 --- [order-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@67fac095
+2024-04-02T20:18:16.292+05:30  INFO 17172 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-02T20:18:17.160+05:30  INFO 17172 --- [order-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-02T20:18:17.192+05:30  INFO 17172 --- [order-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:18:17.469+05:30  WARN 17172 --- [order-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-02T20:18:17.816+05:30  INFO 17172 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-02T20:18:17.825+05:30  INFO 17172 --- [order-management] [main] c.i.o.OrderManagementApplication         : Started OrderManagementApplication in 3.628 seconds (process running for 4.19)
+2024-04-02T20:18:24.420+05:30  INFO 17172 --- [order-management] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-02T20:18:24.421+05:30  INFO 17172 --- [order-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-02T20:18:24.422+05:30  INFO 17172 --- [order-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-02T20:23:23.736+05:30  INFO 17172 --- [order-management] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-02T20:23:23.757+05:30  INFO 17172 --- [order-management] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:23:23.758+05:30  INFO 17172 --- [order-management] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-02T20:23:23.762+05:30  INFO 17172 --- [order-management] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-02T20:23:25.610+05:30  INFO 19928 --- [order-management] [main] c.i.o.OrderManagementApplication         : Starting OrderManagementApplication using Java 17.0.10 with PID 19928 (C:\Users\Dell\Desktop\Order Management\order-management\target\classes started by Dell in C:\Users\Dell\Desktop\Order Management\order-management)
+2024-04-02T20:23:25.613+05:30  INFO 19928 --- [order-management] [main] c.i.o.OrderManagementApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-02T20:23:26.099+05:30  INFO 19928 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-02T20:23:26.147+05:30  INFO 19928 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2024-04-02T20:23:26.544+05:30  INFO 19928 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-02T20:23:26.558+05:30  INFO 19928 --- [order-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-02T20:23:26.558+05:30  INFO 19928 --- [order-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-02T20:23:26.615+05:30  INFO 19928 --- [order-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-02T20:23:26.616+05:30  INFO 19928 --- [order-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 968 ms
+2024-04-02T20:23:26.748+05:30  INFO 19928 --- [order-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-02T20:23:26.811+05:30  INFO 19928 --- [order-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-02T20:23:26.848+05:30  INFO 19928 --- [order-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-02T20:23:27.036+05:30  INFO 19928 --- [order-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-02T20:23:27.062+05:30  INFO 19928 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-02T20:23:27.302+05:30  INFO 19928 --- [order-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@194911c1
+2024-04-02T20:23:27.303+05:30  INFO 19928 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-02T20:23:28.261+05:30  INFO 19928 --- [order-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-02T20:23:28.312+05:30  INFO 19928 --- [order-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:23:28.651+05:30  WARN 19928 --- [order-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-02T20:23:28.990+05:30  INFO 19928 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-02T20:23:28.998+05:30  INFO 19928 --- [order-management] [main] c.i.o.OrderManagementApplication         : Started OrderManagementApplication in 3.735 seconds (process running for 4.236)
+2024-04-02T20:23:34.203+05:30  INFO 19928 --- [order-management] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-02T20:23:34.204+05:30  INFO 19928 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-02T20:23:34.205+05:30  INFO 19928 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-02T20:23:34.286+05:30 DEBUG 19928 --- [order-management] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0 
+    where
+        p1_0."id"=?
+2024-04-02T20:24:16.428+05:30  INFO 19928 --- [order-management] [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-02T20:24:16.439+05:30  INFO 19928 --- [order-management] [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:24:16.441+05:30  INFO 19928 --- [order-management] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-02T20:24:16.444+05:30  INFO 19928 --- [order-management] [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-02T20:24:18.188+05:30  INFO 15860 --- [order-management] [main] c.i.o.OrderManagementApplication         : Starting OrderManagementApplication using Java 17.0.10 with PID 15860 (C:\Users\Dell\Desktop\Order Management\order-management\target\classes started by Dell in C:\Users\Dell\Desktop\Order Management\order-management)
+2024-04-02T20:24:18.190+05:30  INFO 15860 --- [order-management] [main] c.i.o.OrderManagementApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-02T20:24:18.686+05:30  INFO 15860 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-02T20:24:18.736+05:30  INFO 15860 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2024-04-02T20:24:19.082+05:30  INFO 15860 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-02T20:24:19.092+05:30  INFO 15860 --- [order-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-02T20:24:19.092+05:30  INFO 15860 --- [order-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-02T20:24:19.139+05:30  INFO 15860 --- [order-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-02T20:24:19.140+05:30  INFO 15860 --- [order-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 913 ms
+2024-04-02T20:24:19.270+05:30  INFO 15860 --- [order-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-02T20:24:19.306+05:30  INFO 15860 --- [order-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-02T20:24:19.329+05:30  INFO 15860 --- [order-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-02T20:24:19.481+05:30  INFO 15860 --- [order-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-02T20:24:19.498+05:30  INFO 15860 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-02T20:24:19.620+05:30  INFO 15860 --- [order-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@678586f0
+2024-04-02T20:24:19.622+05:30  INFO 15860 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-02T20:24:20.451+05:30  INFO 15860 --- [order-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-02T20:24:20.483+05:30  INFO 15860 --- [order-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:24:20.749+05:30  WARN 15860 --- [order-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-02T20:24:21.041+05:30  INFO 15860 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-02T20:24:21.049+05:30  INFO 15860 --- [order-management] [main] c.i.o.OrderManagementApplication         : Started OrderManagementApplication in 3.178 seconds (process running for 3.673)
+2024-04-02T20:24:24.950+05:30  INFO 15860 --- [order-management] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-02T20:24:24.950+05:30  INFO 15860 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-02T20:24:24.951+05:30  INFO 15860 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-02T20:24:25.040+05:30 DEBUG 15860 --- [order-management] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0 
+    where
+        p1_0."id"=?
+2024-04-02T20:26:35.623+05:30  INFO 15860 --- [order-management] [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-02T20:26:35.635+05:30  INFO 15860 --- [order-management] [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:26:35.637+05:30  INFO 15860 --- [order-management] [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-02T20:26:35.642+05:30  INFO 15860 --- [order-management] [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-02T20:26:37.403+05:30  INFO 15880 --- [order-management] [main] c.i.o.OrderManagementApplication         : Starting OrderManagementApplication using Java 17.0.10 with PID 15880 (C:\Users\Dell\Desktop\Order Management\order-management\target\classes started by Dell in C:\Users\Dell\Desktop\Order Management\order-management)
+2024-04-02T20:26:37.405+05:30  INFO 15880 --- [order-management] [main] c.i.o.OrderManagementApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-02T20:26:37.908+05:30  INFO 15880 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-02T20:26:37.954+05:30  INFO 15880 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2024-04-02T20:26:38.379+05:30  INFO 15880 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-02T20:26:38.390+05:30  INFO 15880 --- [order-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-02T20:26:38.390+05:30  INFO 15880 --- [order-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-02T20:26:38.446+05:30  INFO 15880 --- [order-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-02T20:26:38.446+05:30  INFO 15880 --- [order-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1005 ms
+2024-04-02T20:26:38.589+05:30  INFO 15880 --- [order-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-02T20:26:38.667+05:30  INFO 15880 --- [order-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-02T20:26:38.707+05:30  INFO 15880 --- [order-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-02T20:26:38.924+05:30  INFO 15880 --- [order-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-02T20:26:38.951+05:30  INFO 15880 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-02T20:26:39.075+05:30  INFO 15880 --- [order-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15186ce0
+2024-04-02T20:26:39.077+05:30  INFO 15880 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-02T20:26:40.006+05:30  INFO 15880 --- [order-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-02T20:26:40.035+05:30  INFO 15880 --- [order-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T20:26:40.207+05:30 TRACE 15880 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getOrderDetailsByOrderId' with operations: [Builder[public com.intuit.ordermanagement.model.Order com.intuit.ordermanagement.service.order.OrderServiceImpl.getOrderDetailsByOrderId(java.util.UUID)] caches=[orders] | key='#orderId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T20:26:40.242+05:30 TRACE 15880 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getProductById' with operations: [Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T20:26:40.249+05:30 TRACE 15880 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getProductPrice' with operations: [Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T20:26:40.300+05:30  WARN 15880 --- [order-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-02T20:26:40.575+05:30  INFO 15880 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-02T20:26:40.583+05:30  INFO 15880 --- [order-management] [main] c.i.o.OrderManagementApplication         : Started OrderManagementApplication in 3.494 seconds (process running for 4.013)
+2024-04-02T20:26:44.753+05:30  INFO 15880 --- [order-management] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-02T20:26:44.753+05:30  INFO 15880 --- [order-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-02T20:26:44.754+05:30  INFO 15880 --- [order-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-02T20:26:44.808+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T20:26:44.808+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '12' in cache(s) [productPrices]
+2024-04-02T20:26:44.809+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T20:26:44.809+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '12' in cache(s) [products]
+2024-04-02T20:26:44.850+05:30 DEBUG 15880 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0 
+    where
+        p1_0."id"=?
+2024-04-02T20:26:44.863+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '12' in cache(s) [products]
+2024-04-02T20:26:44.864+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '12' in cache(s) [productPrices]
+2024-04-02T20:27:11.123+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T20:27:11.124+05:30 TRACE 15880 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [productPrices]
+2024-04-02T21:17:54.770+05:30  WARN 15880 --- [order-management] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m45s497ms60µs).
+2024-04-02T21:54:29.717+05:30  INFO 15880 --- [order-management] [RMI TCP Connection(48)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-02T21:54:29.791+05:30  INFO 15880 --- [order-management] [RMI TCP Connection(48)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T21:54:29.811+05:30  INFO 15880 --- [order-management] [RMI TCP Connection(48)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-02T21:54:29.822+05:30  INFO 15880 --- [order-management] [RMI TCP Connection(48)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-02T22:35:13.451+05:30  INFO 10972 --- [order-management] [main] c.i.o.OrderManagementApplication         : Starting OrderManagementApplication using Java 17.0.10 with PID 10972 (C:\Users\Dell\Desktop\Order Management\order-management\target\classes started by Dell in C:\Users\Dell\Desktop\Order Management\order-management)
+2024-04-02T22:35:13.454+05:30  INFO 10972 --- [order-management] [main] c.i.o.OrderManagementApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-04-02T22:35:13.951+05:30  INFO 10972 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-02T22:35:14.001+05:30  INFO 10972 --- [order-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2024-04-02T22:35:14.426+05:30  INFO 10972 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-02T22:35:14.437+05:30  INFO 10972 --- [order-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-02T22:35:14.437+05:30  INFO 10972 --- [order-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-02T22:35:14.492+05:30  INFO 10972 --- [order-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-02T22:35:14.493+05:30  INFO 10972 --- [order-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 993 ms
+2024-04-02T22:35:14.613+05:30  INFO 10972 --- [order-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-02T22:35:14.656+05:30  INFO 10972 --- [order-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-02T22:35:14.678+05:30  INFO 10972 --- [order-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-02T22:35:14.832+05:30  INFO 10972 --- [order-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-02T22:35:14.855+05:30  INFO 10972 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-02T22:35:14.976+05:30  INFO 10972 --- [order-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64ec1459
+2024-04-02T22:35:14.977+05:30  INFO 10972 --- [order-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-02T22:35:15.732+05:30  INFO 10972 --- [order-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-02T22:35:15.772+05:30  INFO 10972 --- [order-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-02T22:35:15.952+05:30 TRACE 10972 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getOrderDetailsByOrderId' with operations: [Builder[public com.intuit.ordermanagement.model.Order com.intuit.ordermanagement.service.order.OrderServiceImpl.getOrderDetailsByOrderId(java.util.UUID)] caches=[orders] | key='#orderId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T22:35:15.984+05:30 TRACE 10972 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getProductById' with operations: [Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T22:35:15.994+05:30 TRACE 10972 --- [order-management] [main] o.s.c.a.AnnotationCacheOperationSource   : Adding cacheable method 'getProductPrice' with operations: [Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false']
+2024-04-02T22:35:16.047+05:30  WARN 10972 --- [order-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-02T22:35:16.353+05:30  INFO 10972 --- [order-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-02T22:35:16.361+05:30  INFO 10972 --- [order-management] [main] c.i.o.OrderManagementApplication         : Started OrderManagementApplication in 3.226 seconds (process running for 3.711)
+2024-04-02T22:35:41.619+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-02T22:35:41.619+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-02T22:35:41.620+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-02T22:35:41.641+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] c.i.o.controller.ProductController       : Fetching all products
+2024-04-02T22:35:41.642+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] c.i.o.s.product.ProductServiceImpl       : Fetching all products
+2024-04-02T22:35:41.733+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0
+2024-04-02T22:35:41.760+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-1] c.i.o.controller.ProductController       : Fetched 4 products
+2024-04-02T22:36:05.329+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:36:05.330+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '12' in cache(s) [productPrices]
+2024-04-02T22:36:05.330+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-4] c.i.o.controller.ProductController       : Fetching price for product with ID: 12
+2024-04-02T22:36:05.330+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:36:05.330+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '12' in cache(s) [products]
+2024-04-02T22:36:05.330+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-4] c.i.o.s.product.ProductServiceImpl       : Fetching product by ID: 12
+2024-04-02T22:36:05.336+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0 
+    where
+        p1_0."id"=?
+2024-04-02T22:36:05.350+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '12' in cache(s) [products]
+2024-04-02T22:36:05.351+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-4] c.i.o.controller.ProductController       : Price fetched successfully for product with ID: 12
+2024-04-02T22:36:05.351+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-4] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '12' in cache(s) [productPrices]
+2024-04-02T22:36:25.230+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-3] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:36:25.231+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-3] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [productPrices]
+2024-04-02T22:36:37.181+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-5] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:36:37.181+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-5] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [productPrices]
+2024-04-02T22:37:20.156+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-6] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:37:20.156+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-6] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [productPrices]
+2024-04-02T22:37:31.710+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-7] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:37:31.710+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-7] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [productPrices]
+2024-04-02T22:37:56.108+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '23' for operation Builder[public java.math.BigDecimal com.intuit.ordermanagement.controller.ProductController.getProductPrice(java.lang.Long)] caches=[productPrices] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:37:56.108+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '23' in cache(s) [productPrices]
+2024-04-02T22:37:56.108+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-8] c.i.o.controller.ProductController       : Fetching price for product with ID: 23
+2024-04-02T22:37:56.108+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '23' for operation Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:37:56.109+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key '23' in cache(s) [products]
+2024-04-02T22:37:56.109+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-8] c.i.o.s.product.ProductServiceImpl       : Fetching product by ID: 23
+2024-04-02T22:37:56.111+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0."id",
+        p1_0."description",
+        p1_0."price",
+        p1_0."product_name" 
+    from
+        "products" p1_0 
+    where
+        p1_0."id"=?
+2024-04-02T22:37:56.113+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '23' in cache(s) [products]
+2024-04-02T22:37:56.113+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-8] c.i.o.controller.ProductController       : Price fetched successfully for product with ID: 23
+2024-04-02T22:37:56.114+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-8] o.s.cache.interceptor.CacheInterceptor   : Creating cache entry for key '23' in cache(s) [productPrices]
+2024-04-02T22:39:00.659+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-2] c.i.o.controller.OrderController         : Received request to place order with payload: OrderPayload [items=[ItemQuantityPair [productId=12, quantity=1], ItemQuantityPair [productId=23, quantity=10]]]
+2024-04-02T22:39:00.660+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '12' for operation Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:39:00.660+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '12' found in cache(s) [products]
+2024-04-02T22:39:00.661+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Computed cache key '23' for operation Builder[public com.intuit.ordermanagement.model.Product com.intuit.ordermanagement.service.product.ProductServiceImpl.getProductById(java.lang.Long)] caches=[products] | key='#productId' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2024-04-02T22:39:00.661+05:30 TRACE 10972 --- [order-management] [http-nio-8080-exec-2] o.s.cache.interceptor.CacheInterceptor   : Cache entry for key '23' found in cache(s) [products]
+2024-04-02T22:39:00.661+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-2] c.i.o.controller.OrderController         : Order created successfully: Order [id=291d11ea-9c33-4bed-957b-36a722931e57, items=[OrderItem [id=null, orderId=291d11ea-9c33-4bed-957b-36a722931e57, productId=12, productPrice=50.00, quantity=1], OrderItem [id=null, orderId=291d11ea-9c33-4bed-957b-36a722931e57, productId=23, productPrice=100.00, quantity=10]], totalOrderValue=null, orderstatus=CREATED]
+2024-04-02T22:39:00.665+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-2] c.i.o.service.order.OrderServiceImpl     : Creating order: Order [id=291d11ea-9c33-4bed-957b-36a722931e57, items=[OrderItem [id=null, orderId=291d11ea-9c33-4bed-957b-36a722931e57, productId=12, productPrice=50.00, quantity=1], OrderItem [id=null, orderId=291d11ea-9c33-4bed-957b-36a722931e57, productId=23, productPrice=100.00, quantity=10]], totalOrderValue=1050.00, orderstatus=CREATED]
+2024-04-02T22:39:00.677+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        o1_0."id",
+        o1_0."orderstatus",
+        o1_0."total_order_value",
+        i1_0."order_id",
+        i1_0."id",
+        i1_0."product_id",
+        i1_0."product_price",
+        i1_0."quantity" 
+    from
+        "orders" o1_0 
+    left join
+        "order_item" i1_0 
+            on o1_0."id"=i1_0."order_id" 
+    where
+        o1_0."id"=?
+2024-04-02T22:39:00.705+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        nextval('"order_item_seq"')
+2024-04-02T22:39:00.726+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        "orders"
+        ("orderstatus", "total_order_value", "id") 
+    values
+        (?, ?, ?)
+2024-04-02T22:39:00.730+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        "order_item"
+        ("order_id", "product_id", "product_price", "quantity", "id") 
+    values
+        (?, ?, ?, ?, ?)
+2024-04-02T22:39:00.733+05:30 DEBUG 10972 --- [order-management] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        "order_item"
+        ("order_id", "product_id", "product_price", "quantity", "id") 
+    values
+        (?, ?, ?, ?, ?)
+2024-04-02T22:40:16.421+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-3] c.i.o.controller.OrderController         : Received request to place order with payload: OrderPayload [items=[ItemQuantityPair [productId=12, quantity=1], ItemQuantityPair [productId=23, quantity=0]]]
+2024-04-02T22:40:16.422+05:30 ERROR 10972 --- [order-management] [http-nio-8080-exec-3] c.i.o.controller.OrderController         : Validation errors occurred while processing the order payload: [Field error in object 'orderPayload' on field 'items[1].quantity': rejected value [0]; codes [Positive.orderPayload.items[1].quantity,Positive.orderPayload.items.quantity,Positive.items[1].quantity,Positive.items.quantity,Positive.quantity,Positive.int,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderPayload.items[1].quantity,items[1].quantity]; arguments []; default message [items[1].quantity]]; default message [Quantity must be positive]]
+2024-04-02T22:40:50.225+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-6] c.i.o.controller.OrderController         : Received request to place order with payload: OrderPayload [items=[ItemQuantityPair [productId=12, quantity=1], ItemQuantityPair [productId=0, quantity=1]]]
+2024-04-02T22:40:50.225+05:30 ERROR 10972 --- [order-management] [http-nio-8080-exec-6] c.i.o.controller.OrderController         : Validation errors occurred while processing the order payload: [Field error in object 'orderPayload' on field 'items[1].productId': rejected value [0]; codes [Positive.orderPayload.items[1].productId,Positive.orderPayload.items.productId,Positive.items[1].productId,Positive.items.productId,Positive.productId,Positive.java.lang.Long,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderPayload.items[1].productId,items[1].productId]; arguments []; default message [items[1].productId]]; default message [Product ID must be positive]]
+2024-04-02T22:41:07.433+05:30  INFO 10972 --- [order-management] [http-nio-8080-exec-7] c.i.o.controller.OrderController         : Received request to place order with payload: OrderPayload [items=[ItemQuantityPair [productId=12, quantity=1], ItemQuantityPair [productId=23, quantity=-1]]]
+2024-04-02T22:41:07.433+05:30 ERROR 10972 --- [order-management] [http-nio-8080-exec-7] c.i.o.controller.OrderController         : Validation errors occurred while processing the order payload: [Field error in object 'orderPayload' on field 'items[1].quantity': rejected value [-1]; codes [Positive.orderPayload.items[1].quantity,Positive.orderPayload.items.quantity,Positive.items[1].quantity,Positive.items.quantity,Positive.quantity,Positive.int,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [orderPayload.items[1].quantity,items[1].quantity]; arguments []; default message [items[1].quantity]]; default message [Quantity must be positive]]
