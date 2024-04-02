@@ -1,0 +1,20 @@
+1711968968928	Rename type 'OrderServiceUT'
+1711976107147	Copy file
+1711976158599	Delete element
+1711976168766	Rename resource 'application.properties'
+1711976198517	Rename resource 'application-test.properties'
+1711978918703	Rename local variable 'product'
+1711978939181	Rename local variable 'getProduct'
+1711984734994	Move compilation unit
+1711984767159	Rename type 'OrderControllerTest1'
+1711985028628	Rename type 'OrderControllerTest'
+1711985058430	Rename type 'OrderServiceTest'
+1711985096599	Rename field 'productServiceRepo'
+1711985457875	Rename field 'productService'
+1711987466118	Rename field 'productServiceImpl'
+1711989502681	Delete element
+1711989510345	Delete element
+1711989980756	Rename local variable 'order'
+1711990218779	Rename method 'getOrderDetails'
+1711990338666	Delete element
+1712025505915	Rename type 'ExceptionHandler'

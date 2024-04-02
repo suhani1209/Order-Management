@@ -2,8 +2,8 @@ package com.intuit.ordermanagement.dto;
 
 import java.util.List;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 
 public class OrderPayload {
 	@NotEmpty(message = "Items list must not be empty")
@@ -22,6 +22,10 @@ public class OrderPayload {
 
 	public void setItems(List<ItemQuantityPair> items) {
 		this.items = items;
+	}
+	@Override
+	public String toString() {
+		return "OrderPayload [items=" + items + "]";
 	}
 	
 }

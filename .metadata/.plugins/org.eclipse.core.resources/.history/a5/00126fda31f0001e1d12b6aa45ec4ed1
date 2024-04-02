@@ -1,0 +1,13 @@
+package com.intuit.ordermanagement.controller;
+
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@RunWith(MockitoJUnitRunner.class)
+public class ProductControllerTest {
+	
+}

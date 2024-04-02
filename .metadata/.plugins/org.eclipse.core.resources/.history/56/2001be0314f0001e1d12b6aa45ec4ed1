@@ -1,0 +1,61 @@
+package com.intuit.ordermanagement;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.OrderItem;
+import com.intuit.ordermanagement.repository.OrderRepository;
+import com.intuit.ordermanagement.service.order.OrderServiceImpl;
+
+@RunWith(MockitoJUnitRunner.class)
+public class OrderServiceUT {
+	@Mock
+    private OrderRepository orderRepository;
+
+    @InjectMocks
+    private OrderServiceImpl orderService;
+
+    @Test
+    public void createOrder_success() {
+        // Test Data
+        Order testOrder = createTestOrder();
+        BigDecimal expectedTotal = BigDecimal.valueOf(35.00); // Based on prices in the test order
+
+        // Mocks
+        when(orderRepository.save(testOrder)).thenReturn(testOrder); 
+
+        // Execute
+        Order createdOrder = orderService.createOrder(testOrder);
+        
+        // Assertions
+        assertEquals(expectedTotal, createdOrder.getTotalOrderValue());
+        assertNotNull(createdOrder.getId());
+
+        verify(orderRepository).save(testOrder);
+    }
+
+    // Helper Method (adjust based on your Order structure)
+    private Order createTestOrder() {
+        Order order = new Order(UUID.randomUUID());
+        List<OrderItem> items = new ArrayList<>();
+        items.add(new OrderItem(order.getId(), 1L, 2, BigDecimal.TEN)); 
+        items.add(new OrderItem(order.getId(), 2L, 1, new BigDecimal("15.00")));
+        order.setItems(items);
+        return order;
+    }
+}

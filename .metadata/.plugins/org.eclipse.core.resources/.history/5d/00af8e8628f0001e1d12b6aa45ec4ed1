@@ -1,0 +1,25 @@
+package com.intuit.ordermanagement.service.product;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.intuit.ordermanagement.exception.ProductNotFoundException;
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.ProductRepository;
+
+public class ProductServiceImpl implements ProductService{
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Override
+	public List<Product> getAllProducts() {
+		return productRepository.findAll();
+	}
+
+	@Override
+	public Product getProductById(Long productId) {
+		return productRepository.findById(productId).orElseThrow(()->new ProductNotFoundException(productId));
+	}
+
+}

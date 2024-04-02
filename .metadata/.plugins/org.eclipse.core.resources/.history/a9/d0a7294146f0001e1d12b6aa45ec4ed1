@@ -1,0 +1,46 @@
+package com.intuit.ordermanagement.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+import java.math.BigDecimal;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.ProductRepository;
+import com.intuit.ordermanagement.service.product.ProductService;
+
+@SpringBootTest
+public class ProductServiceTest {
+
+    @Autowired
+    private ProductService productService;
+
+    @MockBean
+    private ProductRepository productRepository;
+
+    @Test
+    public void testGetProductById() {
+        // Create a test product
+        Product testProduct = new Product("Product", new BigDecimal("20.00"), "TestProduct");
+
+        // Mock the behavior of productRepository
+        when(productRepository.findById(any())).thenReturn(java.util.Optional.of(testProduct));
+
+        // Call the method under test
+        Product product = productService.getProductById(1L);
+
+        // Perform assertions
+        assertEquals(testProduct.getName(), product.getName());
+        assertEquals(testProduct.getDescription(), product.getDescription());
+        assertEquals(testProduct.getPrice(), product.getPrice());
+    }
+
+    // Add more test methods as necessary
+
+}

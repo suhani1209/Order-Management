@@ -1,6 +1,6 @@
 package com.intuit.ordermanagement.dto;
 
-import javax.validation.constraints.Positive;
+import jakarta.validation.constraints.Positive;
 
 public class ItemQuantityPair {
 	@Positive(message = "Product ID must be positive")
@@ -27,5 +27,10 @@ public class ItemQuantityPair {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemQuantityPair [productId=" + productId + ", quantity=" + quantity + "]";
 	}
 }

@@ -1,0 +1,11 @@
+package com.intuit.ordermanagement.service.product;
+
+import java.util.List;
+
+import com.intuit.ordermanagement.model.Product;
+
+public interface ProductService {
+	List<Product> getAllProducts();
+	Product getProductById(Long productId);
+	Product createProduct(Product product);
+}

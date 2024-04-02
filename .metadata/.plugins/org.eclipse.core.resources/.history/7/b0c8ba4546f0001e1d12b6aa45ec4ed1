@@ -1,0 +1,47 @@
+package com.intuit.ordermanagement.service;
+
+public class OrderServiceTest {
+
+}
+@SpringBootTest
+public class ProductServiceTest {
+	
+	@Autowired
+    private ProductService productService;
+
+    @MockBean
+    private ProductRepository productRepository;
+
+    @Test
+    public void testGetProductById() {
+    	Product testProduct = new Product("Product", new BigDecimal("20.00"), "TestProduct");
+    	productService.createProduct(testProduct);
+    	
+    	Product product = productService.getProductById(testProduct.getId());
+    	
+    	assertEquals(testProduct.getId(), product.getId());
+    	assertEquals("Product", product.getName());
+    	assertEquals("TestProduct", product.getDescription());
+    	assertEquals(testProduct.getPrice(), product.getPrice());
+    }
+    
+    @Test
+    public void testGetProductByIdIfProductNotFound() {
+    	long nonExistingProductId = 999L;
+    	assertThrows(ProductNotFoundException.class, () -> productService.getProductById(nonExistingProductId));
+    }
+    
+    @Test
+    public void testGetAllProducts() {
+    	Product testProduct = new Product("Product", new BigDecimal("20.00"), "TestProduct");
+    	productService.createProduct(testProduct);
+    	
+    	Product testProduct2 = new Product("Product2", new BigDecimal("20.00"), "TestProduct2");
+    	productService.createProduct(testProduct2);
+    	
+    	List<Product> products = productService.getAllProducts();
+    	
+    	assertEquals(3, products.size());
+    	assertEquals(products.get(0).getName(), testProduct.getName());
+    }
+}

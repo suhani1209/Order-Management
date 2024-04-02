@@ -1,0 +1,79 @@
+package com.intuit.ordermanagement.controller;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.intuit.ordermanagement.dto.ItemQuantityPair;
+import com.intuit.ordermanagement.dto.OrderPayload;
+import com.intuit.ordermanagement.model.Order;
+import com.intuit.ordermanagement.model.Product;
+import com.intuit.ordermanagement.repository.ProductRepository;
+import com.intuit.ordermanagement.service.order.OrderService;
+import com.intuit.ordermanagement.service.product.ProductService;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@RunWith(MockitoJUnitRunner.class)
+public class OrderControllerTest {
+	@Autowired
+    private MockMvc mockMvc;
+	
+    @Mock
+    private OrderService orderService;
+    @Mock
+    private ProductService productService;
+
+    ObjectMapper mapper = new ObjectMapper();
+
+    @InjectMocks
+    private OrderController orderController;
+
+    @Test
+    public void testPlaceOrder() throws JsonProcessingException, Exception {
+        // Create test data
+    	Product product = new Product("Laptop", new BigDecimal(200), "Mackbook");
+    	productService.createProduct(product);
+    	
+        List<ItemQuantityPair> items = new ArrayList<>();
+        ItemQuantityPair item = new ItemQuantityPair();
+        item.setProductId(1L);
+        item.setQuantity(2);
+        items.add(item);
+        OrderPayload payload = new OrderPayload(items);
+
+        Order order = new Order(UUID.randomUUID());
+        // Mock dependencies
+        when(orderService.createOrder(any())).thenReturn(order);
+
+        // Test the controller
+        Order response = orderController.placeOrder(payload);
+
+        // Verify results
+        mockMvc.perform(post("/api/order")
+                .contentType(org.springframework.http.MediaType.APPLICATION_JSON)
+                .content(mapper.writeValueAsString(payload)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.totalOrderValue").value(new BigDecimal(400)));
+    }
+}
+

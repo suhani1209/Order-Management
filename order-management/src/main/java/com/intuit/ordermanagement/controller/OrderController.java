@@ -1,10 +1,9 @@
 package com.intuit.ordermanagement.controller;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -25,6 +24,8 @@ import com.intuit.ordermanagement.model.Product;
 import com.intuit.ordermanagement.service.order.OrderService;
 import com.intuit.ordermanagement.service.product.ProductService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
@@ -36,10 +37,13 @@ public class OrderController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	 public Order placeOrder(@Valid @RequestBody OrderPayload payload, BindingResult result) throws MethodArgumentNotValidException, NoSuchMethodException, SecurityException {
-		System.out.println("Binding result :::: "+result);
-		if(result.hasErrors()) {
-			throw new MethodArgumentNotValidException(new MethodParameter(this.getClass().getMethod("placeOrder", OrderPayload.class), 0), result);
+	 public Order placeOrder(@Valid @RequestBody OrderPayload payload, BindingResult result) throws MethodArgumentNotValidException{
+		if (result.hasErrors()) {
+			try {
+		        throw new MethodArgumentNotValidException(new MethodParameter(OrderController.class.getDeclaredMethod("placeOrder", OrderPayload.class,BindingResult.class), 0), result);
+		    } catch (NoSuchMethodException e) {
+		        throw new RuntimeException("Critical failure: Missing method 'placeOrder' in OrderController.", e);
+		    }
 	    }
 		UUID orderId = UUID.randomUUID();
 		Order order = new Order(orderId);
